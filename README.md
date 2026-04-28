@@ -36,24 +36,3 @@ The app will open a login window on start. If the project uses a database, make 
 ## Database and configuration
 
 - Check `Models/ComputerClubContext.cs` for database setup and default connection.
-- If there is an `appsettings.json`, check it for connection strings.
-- If the project uses Entity Framework Core, run migrations after changing models.
-
-## Common changes
-
-- Change startup or app behavior: check `App.xaml` and `App.xaml.cs`.
-- Edit UI: open XAML files in the root and `Controls` folder (for example, `MainWindow.xaml`, `LoginWindow.xaml`).
-- Update models: edit files in the `Models` folder.
-
-## Contributing
-
-- This looks like a small test project. If you want to help: fork or clone the repo, create a branch, make changes and open a pull request.
-
-## License
-
-- No license file is included. Add a `LICENSE` file if you want to publish under a specific license.
-
-## Notes
-
-- Remove any secrets or local passwords before publishing. Do not add build artifacts (`bin/`, `obj/`) to the repository.
-
