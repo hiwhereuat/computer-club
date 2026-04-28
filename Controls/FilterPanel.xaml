@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="computerclub.Controls.FilterPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="800">
+
+    <StackPanel Margin="0,0,0,10">
+
+        <!-- Панель поиска -->
+        <Border Background="White" BorderBrush="#D0D0D0" BorderThickness="1" Margin="0,0,0,10" Padding="0">
+            <StackPanel>
+                <Border Background="#F5F5F5" Padding="10,8" BorderBrush="#D0D0D0" BorderThickness="0,0,0,1">
+                    <TextBlock Text="🔍 Поиск" FontWeight="SemiBold" FontSize="14" Foreground="#333333"/>
+                </Border>
+                <WrapPanel Margin="10" VerticalAlignment="Center">
+                    <TextBlock Text="Искать в:" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13" Foreground="#555555" FontWeight="Normal"/>
+                    <ComboBox x:Name="CmbSearchColumn" Width="150" Margin="0,0,15,0" Height="32" VerticalAlignment="Center"/>
+                    <TextBlock Text="Текст:" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13" Foreground="#555555" FontWeight="Normal"/>
+                    <TextBox x:Name="TxtSearch" Width="200" Height="32" VerticalAlignment="Center"/>
+                    <Button x:Name="BtnClearSearch" Content="Очистить" Margin="15,0,0,0" Padding="12,6" Height="32" 
+                            Background="#E0E0E0" BorderThickness="0" Cursor="Hand" VerticalAlignment="Center" Foreground="#333333"/>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Панель фильтрации -->
+        <Border Background="White" BorderBrush="#D0D0D0" BorderThickness="1" Margin="0,0,0,0" Padding="0">
+            <StackPanel>
+                <Border Background="#F5F5F5" Padding="10,8" BorderBrush="#D0D0D0" BorderThickness="0,0,0,1">
+                    <TextBlock Text="⚙️ Фильтрация" FontWeight="SemiBold" FontSize="14" Foreground="#333333"/>
+                </Border>
+                <WrapPanel Margin="10" VerticalAlignment="Center">
+                    <TextBlock Text="Фильтр по:" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13" Foreground="#555555" FontWeight="Normal"/>
+                    <ComboBox x:Name="CmbFilterColumn" Width="150" Margin="0,0,15,0" Height="32" VerticalAlignment="Center"/>
+
+                    <!-- Числовой фильтр -->
+                    <StackPanel x:Name="PanelNumeric" Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock Text="От:" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="13" Foreground="#555555"/>
+                        <TextBox x:Name="NumFrom" Width="80" Height="32" VerticalAlignment="Center"/>
+                        <TextBlock Text="До:" VerticalAlignment="Center" Margin="10,0,5,0" FontSize="13" Foreground="#555555"/>
+                        <TextBox x:Name="NumTo" Width="80" Height="32" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Текстовый фильтр -->
+                    <StackPanel x:Name="PanelText" Orientation="Horizontal" Visibility="Visible">
+                        <TextBlock Text="Содержит:" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="13" Foreground="#555555"/>
+                        <TextBox x:Name="TxtFilter" Width="180" Height="32" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Дата фильтр -->
+                    <StackPanel x:Name="PanelDate" Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock Text="С:" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="13" Foreground="#555555"/>
+                        <DatePicker x:Name="DateFrom" Width="100" Height="32" VerticalAlignment="Center"/>
+                        <TextBlock Text="По:" VerticalAlignment="Center" Margin="10,0,5,0" FontSize="13" Foreground="#555555"/>
+                        <DatePicker x:Name="DateTo" Width="100" Height="32" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Булев фильтр -->
+                    <StackPanel x:Name="PanelBool" Orientation="Horizontal" Visibility="Collapsed">
+                        <ComboBox x:Name="CmbBoolValue" Width="100" Height="32" VerticalAlignment="Center">
+                            <ComboBoxItem Content="Да" Tag="true" IsSelected="True"/>
+                            <ComboBoxItem Content="Нет" Tag="false"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <Button x:Name="BtnClearFilter" Content="Сбросить фильтр" Margin="15,0,0,0" Padding="12,6" Height="32" 
+                            Background="#E0E0E0" BorderThickness="0" Cursor="Hand" VerticalAlignment="Center" Foreground="#333333"/>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+</UserControl>
